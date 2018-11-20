@@ -93,7 +93,7 @@ var Split = function (ids, options) {
     // the first elements parent and hope users read the docs because the
     // behavior will be whacky otherwise.
     var parent = elementOrSelector(ids[0]).parentNode;
-    var parentFlexDirection = global.getComputedStyle(parent).flexDirection;
+    var parentFlexDirection = global.getComputedStyle(parent) ? global.getComputedStyle(parent).flexDirection :null;
 
     // Set default options.sizes to equal percentages of the parent element.
     var sizes = options.sizes || ids.map(function () { return 100 / ids.length; });
